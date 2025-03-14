@@ -27,8 +27,8 @@ const Hero: React.FC<HeroProps> = ({
       const { clientX, clientY } = e;
       const { width, height } = heroRef.current.getBoundingClientRect();
       
-      const x = (clientX / width - 0.5) * 5; // Reduced movement amount for better performance
-      const y = (clientY / height - 0.5) * 5;
+      const x = (clientX / width - 0.5) * 3; // Further reduced movement amount
+      const y = (clientY / height - 0.5) * 3;
       
       heroRef.current.style.setProperty('--x', `${x}px`);
       heroRef.current.style.setProperty('--y', `${y}px`);
@@ -50,7 +50,7 @@ const Hero: React.FC<HeroProps> = ({
       ref={heroRef}
       className="relative h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/dance-hero.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',

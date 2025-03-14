@@ -18,7 +18,7 @@ const Index: React.FC = () => {
         subtitle="Join the award-winning Boss Lady Dance Co. and unleash your potential through discipline, teamwork, and artistic excellence."
         ctaText="Join Our Team"
         ctaLink="/join"
-        backgroundImage="/images/dance-hero.jpg"
+        backgroundImage="" // This is now ignored as we're using the direct URL in the Hero component
       />
       
       <AboutSection />

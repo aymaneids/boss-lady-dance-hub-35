@@ -1,9 +1,12 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -15,9 +18,11 @@ const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   const navLinks = [{
     text: "Home",
     href: "/"
@@ -37,8 +42,9 @@ const Navbar: React.FC = () => {
     text: "Contact",
     href: "/contact"
   }];
+
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 dark:bg-black/90 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
-      <nav className="container mx-auto px-6 py-4 flex justify-between items-center bg-slate-100">
+      <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
           <span className="text-2xl font-display font-bold gradient-text">BOSS LADY</span>
           <span className="text-xs font-medium uppercase tracking-widest">Dance Co</span>
@@ -74,4 +80,5 @@ const Navbar: React.FC = () => {
       </div>
     </header>;
 };
+
 export default Navbar;

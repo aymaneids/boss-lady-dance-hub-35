@@ -50,7 +50,7 @@ const Hero: React.FC<HeroProps> = ({
       ref={heroRef}
       className="relative h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?auto=format&fit=crop&q=80&w=1000')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -60,15 +60,15 @@ const Hero: React.FC<HeroProps> = ({
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70"></div>
       
-      <div className="container relative z-10 px-6 text-center">
+      <div className="container relative z-10 px-4 sm:px-6 text-center">
         <div>
-          <span className="inline-block px-4 py-1 mb-6 text-xs uppercase tracking-wider font-semibold bg-purple-600 text-white rounded-full">
+          <span className="inline-block px-4 py-1 mb-4 sm:mb-6 text-xs uppercase tracking-wider font-semibold bg-purple-600 text-white rounded-full">
             Excellence in Dance
           </span>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 font-display">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-6 font-display">
             {title}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-10 max-w-3xl mx-auto">
             {subtitle}
           </p>
           

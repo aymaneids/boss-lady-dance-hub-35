@@ -1,35 +1,8 @@
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Trophy, Heart, Star } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
-    const elements = document.querySelectorAll('.reveal');
-    elements.forEach((el) => {
-      observer.observe(el);
-    });
-    
-    return () => {
-      elements.forEach((el) => {
-        observer.unobserve(el);
-      });
-    };
-  }, []);
-
   const features = [
     {
       icon: <Trophy className="h-10 w-10 text-purple-500" />,
@@ -49,20 +22,20 @@ const AboutSection: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="content-section" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="about-section" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 reveal opacity-0" style={{ transitionDelay: '0.1s' }}>
-          <h2 className="section-heading">About Boss Lady Dance Co</h2>
-          <p className="section-subheading">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">About Boss Lady Dance Co</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Empowering young dancers through discipline, technique, and team spirit.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="reveal opacity-0" style={{ transitionDelay: '0.3s' }}>
+          <div>
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-64 h-64 bg-purple-200 rounded-lg -z-10"></div>
-              <div className="absolute -bottom-4 -right-4 w-64 h-64 bg-gold-200 rounded-lg -z-10"></div>
+              <div className="absolute -bottom-4 -right-4 w-64 h-64 bg-yellow-200 rounded-lg -z-10"></div>
               <div className="relative h-full w-full overflow-hidden rounded-lg shadow-xl">
                 <img
                   src="https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1050&q=80"
@@ -73,7 +46,7 @@ const AboutSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="space-y-6 reveal opacity-0" style={{ transitionDelay: '0.5s' }}>
+          <div className="space-y-6">
             <h3 className="text-3xl font-bold font-display">Our Story</h3>
             <p className="text-lg text-gray-600 dark:text-gray-300">
               Founded with a vision to create a premier dance team that challenges and inspires young dancers, Boss Lady Dance Co has grown from a small local team to a renowned competitive dance company.

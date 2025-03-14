@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({
   }, []);
 
   const scrollToContent = () => {
-    const contentElement = document.getElementById('content-section');
+    const contentElement = document.getElementById('about-section');
     if (contentElement) {
       contentElement.scrollIntoView({ behavior: 'smooth' });
     }

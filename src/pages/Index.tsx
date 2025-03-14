@@ -21,12 +21,10 @@ const Index: React.FC = () => {
         backgroundImage="/images/dance-background.jpg"
       />
       
-      <div id="content-section">
-        <AboutSection />
-        <ProgramsSection />
-        <TestimonialsSection />
-        <CTASection />
-      </div>
+      <AboutSection />
+      <ProgramsSection />
+      <TestimonialsSection />
+      <CTASection />
       
       <Footer />
     </div>

@@ -37,7 +37,7 @@ const ProgramsSection: React.FC = () => {
   return (
     <section className="py-20 bg-white dark:bg-gray-800">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 reveal opacity-0">
+        <div className="text-center mb-16">
           <h2 className="section-heading">Our Programs</h2>
           <p className="section-subheading">
             Tailored training for all ages and skill levels, focusing on technique, performance, and team spirit.
@@ -48,8 +48,7 @@ const ProgramsSection: React.FC = () => {
           {programs.map((program, index) => (
             <div 
               key={index} 
-              className="rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 reveal opacity-0"
-              style={{ transitionDelay: `${index * 0.1 + 0.2}s` }}
+              className="rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
             >
               <div className={`h-24 ${program.color} flex items-center justify-center`}>
                 <h3 className="text-2xl font-bold text-white">{program.title}</h3>
@@ -76,7 +75,7 @@ const ProgramsSection: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center reveal opacity-0" style={{ transitionDelay: '0.6s' }}>
+        <div className="mt-16 text-center">
           <div className="inline-flex items-center bg-gray-100 dark:bg-gray-700 rounded-lg p-6 mb-8">
             <Award size={32} className="text-purple-500 mr-4" />
             <div className="text-left">
